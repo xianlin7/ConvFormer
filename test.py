@@ -21,16 +21,14 @@ def main():
     #  =========================================== parameters setting ==================================================
 
     parser = argparse.ArgumentParser(description='Networks')
-    parser.add_argument('--modelname', default='MsRed', type=str, help='type of model')
-    parser.add_argument('--task', default='ISIC', help='task or dataset name')
+    parser.add_argument('--modelname', default='SETR_ConvFormer', type=str, help='type of model')
+    parser.add_argument('--task', default='ICH', help='task or dataset name')
 
     args = parser.parse_args()
     opt = get_config(args.task)  # please configure your hyper-parameter
     #opt.eval_mode = "patient_record"
-    opt.save_path_code = "_plane_"
-    opt.modelname = "TransUnet_CF"
+    opt.save_path_code = "_"
     opt.mode = "eval"
-    opt.load_path = "./checkpoints/ISIC/MsRed_+_03151848_4_0.902537761437633.pth"
     print(opt.load_path)
 
     device = torch.device(opt.device)
