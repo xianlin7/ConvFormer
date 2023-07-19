@@ -23,5 +23,3 @@ Commands for testing
 ``` 
 python test.py
 ```
-
-# ConvFormer
